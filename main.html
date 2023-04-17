@@ -10,7 +10,23 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			 return arr.sort()[arr.length-2];
+			 let max=-Infinity;
+			let sMax=-Infinity;
+			let hashTable={};
+
+
+			for(let a of arr){
+				if(!hashTable[a]){
+					hashTable[a]=true;
+					if (a>max) {
+						sMax=max;
+						max=a;
+					}else if(a>sMax){
+						sMax=a;
+					}
+				}
+			}
+			return sMax;
 			
 		}
 
